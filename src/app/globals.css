@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #edf0f5;
+}
+
+@layer base {
+  :root {
+        --radius: 0.5rem;
+    }
+}
+
+.add-button {
+   background-color: rgb(64, 47, 141);
+}
+
+.add-button:hover {
+    background-color: rgb(52, 35, 128);
+}
+
+.cancel-button {
+    background-color: #6d727c;
+}
+
+.cancel-button:hover {
+    background-color: #6b6d6e;
+}
