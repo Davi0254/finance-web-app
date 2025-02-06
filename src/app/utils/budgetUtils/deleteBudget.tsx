@@ -1,7 +1,7 @@
 interface Row {
   budgetName: string;
   amount: number;
-  date: string;
+  date?: string;
   category: string;
 }
 

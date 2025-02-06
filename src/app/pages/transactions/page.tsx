@@ -1,7 +1,7 @@
 'use client'
 
 import NavBar from "@/app/components/NavBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form } from "../../components/Form";
 import { InputField, SelectField } from "../../components/inputFields";
 import { DeleteButton } from "@/app/components/Buttons";
@@ -34,6 +34,7 @@ const TransactionsPage = () => {
     const [status, setStatus] = useState("paid");
     const [method, setMethod] = useState("bank-transfer");
     const [amount, setAmount] = useState(0);
+    const [token, setToken] = useState<string | null>("");
     const [error, setError] = useState("");
 
     const toggleFormOpen = () => {
@@ -63,8 +64,11 @@ const TransactionsPage = () => {
 
     useGetTransactions({ setRows, setError })
 
-    const token = localStorage.getItem('jwt_token');
-
+    useEffect(() => {
+        const jwt_token = localStorage.getItem('jwt_token');
+        setToken(jwt_token)
+    }, [])
+    
     return (
         <>
             <NavBar

@@ -15,8 +15,8 @@ const roboto = Roboto({ weight: '400', subsets: ["latin"] })
 interface BudgetRow {
     budgetName: string;
     amount: number;
+    date?: string;
     category: string;
-    date: string;
 }
 
 const budgetPage: React.FC = () => {

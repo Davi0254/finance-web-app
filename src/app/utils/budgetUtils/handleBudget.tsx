@@ -1,10 +1,11 @@
 interface Row {
   budgetName: string;
   amount: number;
+  date?: string;
   category: string;
 }
 
-interface handleBudgetProps {
+interface HandleBudgetProps {
   budgetName: string | null;
   amount: number | null;
   category: string | null;
@@ -22,7 +23,7 @@ const handleBudget = async (e: React.FormEvent<HTMLFormElement>, {
   category,
   setError,
   setIsFormOpen
-}: handleBudgetProps) => {
+}: HandleBudgetProps) => {
   e.preventDefault();
   if (
     !budgetName ||

@@ -17,7 +17,7 @@ interface Row {
     budgetName: string;
     amount: number;
     category: string;
-    date: string;
+    date?: string;
 }
 
 interface TableProps {

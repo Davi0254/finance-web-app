@@ -1,4 +1,7 @@
+'use client'
+
 import Link from "next/link";
+import { useEffect } from "react";
 import Image from "next/image";
 import homeIcon from "@/app/assets/home-1-svgrepo-com.svg";
 import budgetIcon from "@/app/assets/budget-business-calculate-svgrepo-com.svg";
@@ -17,13 +20,13 @@ const NavBar = ({ isMenuOpen, setIsMenuOpen, token }: {
     token: string | null
 }) => {
 
-    const toggleMenu = () => {
-        setIsMenuOpen((prev) => !prev);
-    };
-
     const logout = () => {
         localStorage.clear();
     }
+
+    const toggleMenu = () => {
+        setIsMenuOpen((prev) => !prev);
+    };
 
     return (
         <div className={`flex h-16 bg-emerald-700 text-white shadow ${roboto.className}`}>
